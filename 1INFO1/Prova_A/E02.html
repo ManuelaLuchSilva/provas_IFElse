@@ -1,7 +1,7 @@
 <script>
     /*
     Problema: Salário Líquido
-    Peça para o usuário informar o seu salário líquido. Peça também para informar se deseja receber auxílio transporte ou não. Considere que o salário líquido é o salário bruto menos os descontos. Os descontos são calculados da seguinte forma:
+    Peça para o usuário informar o seu salário bruto. Peça também para informar se deseja receber auxílio transporte ou não. Considere que o salário líquido é o salário bruto menos os descontos. Os descontos são calculados da seguinte forma:
     - Se o salário for menor que R$ 2.000,00, não há desconto.
     - Se o salário for maior ou igual a R$ 2.000,00 e menor que R$ 3.500,00, o desconto é de 10%.
     - Se o salário for maior ou igual a R$ 3.500,00 e menor que R$ 6.000,00, o desconto é de 20%.
@@ -11,11 +11,25 @@
     */
     
     //Entrada
-
+    const salario = Number(prompt("Qual seu salário?").replace(",",".").trim());
+    const auxilio = prompt("Deseja receber auxilio?(S/N)").toLowerCase().trim();
+    let salar = salario
 
     //Processamento
-
+    if(salario>=2000 && salario<3500){
+        salar = salario-(salario*0.1)
+    }
+    else if(salario>=3500 && salario<6000){
+        salar = salario-(salario*0.2)
+    }
+    else if(salario>=6000){
+        salar = salario-(salario*0.3)
+    }
+    if(auxilio== "s"){
+        salar = salar-(salar*0.06)
+    }
 
     //Saída
+    document.write(`Seu salário líquido é R$${salar.toFixed(2).replace(".",",")}`)
 
 </script>
