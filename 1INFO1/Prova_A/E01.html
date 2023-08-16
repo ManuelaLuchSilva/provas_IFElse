@@ -6,11 +6,75 @@
     */
     
     //Entrada
-
+    let quantvoto = 0
+    let votosMaria = 0 
+    let votosJoao = 0
+    const voto1 = Math.round(prompt("Escolha um representante: \nJoão(1) e Maria(2)"))
+    const voto2 = Math.round(prompt("Escolha um representante: \nJoão(1) e Maria(2)"))
+    const voto3 = Math.round(prompt("Escolha um representante: \nJoão(1) e Maria(2)"))
+    const voto4 = Math.round(prompt("Escolha um representante: \nJoão(1) e Maria(2)"))
+    const voto5 = Math.round(prompt("Escolha um representante: \nJoão(1) e Maria(2)"))
 
     //Processamento
+    if(voto1 == 1 || voto1 == 2){
+        quantvoto += 1
+        if(voto1 == 1){
+            votosJoao += 1
+        }
+        else{
+            votosMaria += 1
+        }
+    }
+    if(voto2 == 1 || voto2 == 2){
+        quantvoto += 1
+        if(voto2 == 1){
+            votosJoao += 1
+        }
+        else{
+            votosMaria += 1
+        }
+    }
+    if(voto3 == 1 || voto3 == 2){
+        quantvoto += 1
+        if(voto3 == 1){
+            votosJoao += 1
+        }
+        else{
+            votosMaria += 1
+        }
+    }
+    if(voto4 == 1 || voto4 == 2){
+        quantvoto += 1
+        if(voto4 == 1){
+            votosJoao += 1
+        }
+        else{
+            votosMaria += 1
+        }
+    }
+    if(voto5 == 1 || voto5 == 2){
+        quantvoto += 1
+        if(voto5 == 1){
+            votosJoao += 1
+        }
+        else{
+            votosMaria += 1
+        }
+    }
 
+    let resultado = ""
+    if(votosJoao>votosMaria){
+        resultado = `João ganhou, ${quantvoto} pessoas participaram do voto`
+    }
+    else if(votosMaria>votosJoao){
+        resultado = `Maria ganhou, ${quantvoto} pessoas participaram do voto`
+    }
+    else{
+        resultado = `Ninguém ganhou, ${quantvoto} pessoas que votaram`
+    }
 
     //Saída
+
+    document.write(`${resultado}`)
 
 </script>
